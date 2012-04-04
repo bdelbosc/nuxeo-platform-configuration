@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
-<component
-	name="org.nuxeo.ecm.platform.configuration.ConfigurationService"
+<component name="org.nuxeo.ecm.platform.configuration.ConfigurationService"
 	version="1.0">
 
 	<service>
@@ -12,8 +11,33 @@
 		class="org.nuxeo.ecm.platform.configuration.ConfigurationServiceImpl" />
 
 	<documentation>
-		Nuxeo Configuration Service give access to apache common
+		Nuxeo Configuration Service gives access to apache common
 		configuration.
+		<p />
+		Supported configuration types are :
+		<ul>
+			<li>
+				<i>system</i>
+				to use OS environment variables.
+			</li>
+			<li>
+				<i>properties</i>
+				for Java properties file.
+			</li>
+			<li>
+				<i>database</i>
+				you need to setup a 'jdbc/configuration' datasource.
+			</li>
+		</ul>
+		<p />
+		Here is are some configuration definitions:
+		<code>
+			<configuration name="system" type="system" />
+			<configuration name="main" type="properties"
+				file="${nuxeo.config.dir}/test.properties" />
+			<configuration name="db" type="database" dbnamespace="foo" />
+		</code>
+
 	</documentation>
 
 	<extension-point name="configuration">

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.configuration.test.ds.postgresql">
+  <extension target="org.nuxeo.runtime.datasource" point="datasources">
+    <datasource name="jdbc/configuration" driverClassName="org.postgresql.Driver"
+      maxActive="20" maxIdle="5">
+      <property name="url">jdbc:postgresql://${nuxeo.test.vcs.server}:${nuxeo.test.vcs.port}/${nuxeo.test.vcs.database}</property>
+      <property name="user">${nuxeo.test.vcs.user}</property>
+      <property name="password">${nuxeo.test.vcs.password}</property>
+    </datasource>
+  </extension>
+</component>

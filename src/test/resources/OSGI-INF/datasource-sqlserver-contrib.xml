@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.configuration.test.ds.sqlserver">
+  <extension target="org.nuxeo.runtime.datasource" point="datasources">
+    <datasource name="jdbc/configuration" driverClassName="net.sourceforge.jtds.jdbc.Driver"
+      maxActive="20" maxIdle="5">
+      <property name="url">jdbc:jtds:sqlserver://${nuxeo.test.vcs.server}:${nuxeo.test.vcs.port}/${nuxeo.test.vcs.database};user=${nuxeo.test.vcs.user};password=${nuxeo.test.vcs.password}</property>
+    </datasource>
+  </extension>
+</component>

@@ -3,8 +3,9 @@
 
   <extension target="org.nuxeo.ecm.platform.configuration.ConfigurationService"
     point="configuration">
-    <configuration name="foo" />
-    <configuration name="foo bar" />
+    <configuration name="system" type="system" />
+    <configuration name="main" type="properties" file="${package.resource.dir}/test.properties" />
+    <configuration name="db" type="database" dbnamespace="foo" />
   </extension>
 
 </component>
